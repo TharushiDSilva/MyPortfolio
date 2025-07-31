@@ -1,27 +1,33 @@
 "use client";
-import Link from 'next/link';
 import { useState } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollTo = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false); // close mobile menu
+    }
+  };
 
   return (
     <nav className="p-2 w-full absolute top-0 z-20 bg-transparent">
       <div className="flex justify-between items-center">
         {/* Logo Section */}
         <div>
-          <Link href="/">
-            <img src="portfolio_images/signature.png" alt="Logo" className="h-20 w-auto" /> 
-            {/* Replace /logo.png with your actual logo path */}
-          </Link>
+          <a href="#">
+            <img src="portfolio_images/signature.png" alt="Logo" className="h-20 w-auto" />
+          </a>
         </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-4">
-          <Link href="/" className="text-white hover:text-purple-300 px-3 py-2 rounded">Home</Link>
-          <Link href="/about" className="text-white hover:text-purple-300 px-3 py-2 rounded">About</Link>
-          <Link href="/portfolio" className="text-white hover:text-purple-300 px-3 py-2 rounded">Portfolio</Link>
-          <Link href="/contact" className="text-white hover:text-purple-300 px-3 py-2 rounded">Contact</Link>
+          <button onClick={() => scrollTo('home')} className="text-white hover:text-purple-300 px-3 py-2 rounded">Home</button>
+          <button onClick={() => scrollTo('about')} className="text-white hover:text-purple-300 px-3 py-2 rounded">About</button>
+          <button onClick={() => scrollTo('portfolio')} className="text-white hover:text-purple-300 px-3 py-2 rounded">Portfolio</button>
+          <button onClick={() => scrollTo('contact')} className="text-white hover:text-purple-300 px-3 py-2 rounded">Contact</button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -36,11 +42,11 @@ const Navbar = () => {
 
       {/* Mobile Links */}
       {isOpen && (
-        <div className="md:hidden mt-2 space-y-2">
-          <Link href="/" className="block text-white hover:text-purple-300 px-3 py-2 rounded" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link href="/about" className="block text-white hover:text-purple-300 px-3 py-2 rounded" onClick={() => setIsOpen(false)}>About</Link>
-          <Link href="/portfolio" className="block text-white hover:text-purple-300 px-3 py-2 rounded" onClick={() => setIsOpen(false)}>Portfolio</Link>
-          <Link href="/contact" className="block text-white hover:text-purple-300 px-3 py-2 rounded" onClick={() => setIsOpen(false)}>Contact</Link>
+        <div className="md:hidden mt-2 space-y-2 p-3">
+          <button onClick={() => scrollTo('home')} className="block text-white hover:text-purple-300 px-3 py-2 rounded">Home</button>
+          <button onClick={() => scrollTo('about')} className="block text-white hover:text-purple-300 px-3 py-2 rounded">About</button>
+          <button onClick={() => scrollTo('portfolio')} className="block text-white hover:text-purple-300 px-3 py-2 rounded">Portfolio</button>
+          <button onClick={() => scrollTo('contact')} className="block text-white hover:text-purple-300 px-3 py-2 rounded">Contact</button>
         </div>
       )}
     </nav>
