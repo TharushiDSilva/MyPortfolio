@@ -18,10 +18,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#0e0c15] text-white">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen relative overflow-hidden`}
       >
+        {/* Background Blur + Gradient */}
+        <div className="absolute inset-0 -z-10">
+          <div className="w-full h-full bg-gradient-to-b from-[#100e1a] via-[#1c122e] to-[#0e0c15] blur-2xl opacity-80"></div>
+        </div>
+
         {children}
       </body>
     </html>

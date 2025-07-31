@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import Socialmedia from '@/components/SocialMedia';
 
 export default function Hero() {
   const vantaRef = useRef(null);
@@ -157,7 +158,7 @@ export default function Hero() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: radial-gradient(circle at 10% 10%, rgba(255, 182, 193, 0.05) 0%, rgba(255, 20, 147, 0.08) 40%, rgba(0, 0, 0, 0.4) 100%);
+          background: radial-gradient(circle at 10% 10%, rgba(255, 182, 193, 0.05) 0%, rgba(255, 20, 147, 0.08) 0%, rgba(0, 0, 0, 0.4) 100%);
           z-index: 3;
         }
 
@@ -292,8 +293,11 @@ export default function Hero() {
           <a href="/resume.pdf" download className="cta-button">
             Download Resume
           </a>
-        </div>
-
+        
+<div className="floating-elements mb-1.5  p-6">
+  <Socialmedia />
+</div>
+</div>
         {/* Optional scroll indicator */}
         <div className="scroll-indicator">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
