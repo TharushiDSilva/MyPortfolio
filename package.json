@@ -27,8 +27,8 @@
   },
   "scripts": {
   "dev": "next dev",
-  "build": "next build",
-  "deploy": "gh-pages -d out"
+ "build": "next build",
+  "deploy": "echo '' > out/.nojekyll"
 }
 
   
