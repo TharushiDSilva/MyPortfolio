@@ -160,7 +160,7 @@ const Hero = () => {
             Get In Touch
           </a>
           <a
-            href="/resume.pdf"
+            href="/TharushiDeSilva.pdf"
             download
             className="px-8 py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300"
           >
