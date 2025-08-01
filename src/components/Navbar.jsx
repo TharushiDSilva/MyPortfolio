@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         {/* Logo Section */}
         <div>
-          <a href="#">
+          <a href="/">
             <img src="portfolio_images/signature.png" alt="Logo" className="h-20 w-auto" />
           </a>
         </div>
@@ -25,8 +25,8 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-4">
           <button onClick={() => scrollTo('home')} className="text-white hover:text-purple-300 px-3 py-2 rounded">Home</button>
-          <button onClick={() => scrollTo('about')} className="text-white hover:text-purple-300 px-3 py-2 rounded">About</button>
-          <button onClick={() => scrollTo('portfolio')} className="text-white hover:text-purple-300 px-3 py-2 rounded">Portfolio</button>
+          <button onClick={() => scrollTo('about')} className="text-white hover:text-purple-300 px-3 py-2 rounded">About me</button>
+          <button onClick={() => scrollTo('projects')} className="text-white hover:text-purple-300 px-3 py-2 rounded">Projects</button>
           <button onClick={() => scrollTo('contact')} className="text-white hover:text-purple-300 px-3 py-2 rounded">Contact</button>
         </div>
 

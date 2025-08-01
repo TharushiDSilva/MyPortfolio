@@ -1,24 +1,31 @@
-import Hero from '../components/hero';
-import About from '../components/About';
-import Contact from '../components/Contact';
-import Navbar from '../components/Navbar';
+'use client';
+import React, { useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/HeroSection';
+import About from '@/components/about';
+import Contact from '@/components/contact';
+import Projects from '@/components/projects'; 
 
-export default function Home() {
+const Portfolio = () => {
+  useEffect(() => {
+    // Ensure smooth scrolling is enabled
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      document.documentElement.style.scrollBehavior = '';
+    };
+  }, []);
+
   return (
-    <main className="bg-[#0e0c15] text-white scroll-smooth">
+    <>
       <Navbar />
-
-      <section id="home">
-        <Hero />
-      </section>
-
-      <section id="about" className="min-h-screen flex items-center justify-center">
-        <About />
-      </section>
-
-      <section id="contact" className="min-h-screen flex items-center justify-center">
-        <Contact />
-      </section>
-    </main>
+      <Hero />
+      <About />
+      <Projects />
+      {/* Ensure Contact is last to maintain logical flow */}
+      <Contact />
+    </>
   );
-}
+};
+
+export default Portfolio;
