@@ -1,0 +1,316 @@
+import React, { useState, useEffect } from 'react';
+import { ExternalLink, Github, Code, Database, Smartphone, Shield, Droplets, GraduationCap, Monitor, ChevronLeft, ChevronRight } from 'lucide-react';
+
+const Projects = () => {
+  const [hoveredProject, setHoveredProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState({});
+
+  // Auto-advance slideshow every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(prev => {
+        const newIndex = { ...prev };
+        projects.forEach(project => {
+          if (project.images && project.images.length > 1) {
+            const currentIndex = newIndex[project.id] || 0;
+            const nextIndex = (currentIndex + 1) % project.images.length;
+            newIndex[project.id] = nextIndex;
+          }
+        });
+        return newIndex;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const projects = [
+      {
+      id: 5,
+      title: "PresCrypt – Doctor-Patient Management System",
+      description: "PresCrypt is a full-stack healthcare management system designed to securely connect patients, doctors, and administrators on a unified platform. It features secure authentication and role-based access, patient registration, appointment scheduling, health record access, and prescription management. The system includes an AI-powered chatbot for navigation and support, real-time doctor availability, video consultations, and integrated communication using SignalR. Admins can manage doctor approvals and access control, while patients can grant or revoke consent for doctors to view their health records. The backend uses ASP.NET Core with JWT-based authorization, and the frontend is built with Next.js and Tailwind CSS. PresCrypt also integrates with OpenMRS for external medical record systems and includes strong security features.",
+      techStack: ["ASP.NET Core", "C#", "Next.js", "MS SQL", "Flask", "AI"],
+      icon: Shield,
+      gradient: "from-red-500 to-pink-500",
+      github: "#",
+      category: "Full-Stack Development",
+      images: [
+        { url: "/portfolio_images/prescrypt-1.jpg", alt: "Login Dashboard" },
+        { url: "/portfolio_images/prescrypt-2.jpg", alt: "Patient Records" }
+      ]
+    },
+    {
+      id: 2,
+      title: "Water Tank Cleaning System",
+      description: "This Level 1 microcontroller-based hardware project was developed to transform traditional water tank cleaning by offering a fully automated, efficient, and hygienic solution. Motivated by the real-world challenges people face with manual tank cleaning, our team conducted extensive research to design an innovative system aimed at eliminating manual labor, reducing contamination risks, and ensuring safer water usage.The system features with advanced motorized lid integrating,Rotating cleaning brushes,High-pressure water pumps,Sensor units to monitor water levels and cleaning progressand A central Arduino microcontroller for complete automation",
+      techStack: ["Arduino", "C++", "IoT", "Sensors"],
+      icon: Droplets,
+      gradient: "from-blue-400 to-teal-500",
+      github: "#",
+      category: "IoT & Hardware",
+      images: [
+        { url: "/portfolio_images/watertank2.jpg", alt: "Arduino Setup" },
+
+       
+      ]
+    },
+    {
+      id: 3,
+      title: "School Information Management System",
+      description: "Full-stack web application for managing teacher and student data using Angular, Node.js/Express, and SQLite. Includes complete CRUD operations and responsive user interface. Built as capstone project.",
+      techStack: ["Angular", "Node.js", "Express", "SQLite"],
+      icon: GraduationCap,
+      gradient: "from-purple-500 to-indigo-500",
+      github: "#",
+      category: "Full-Stack Development",
+      images: [
+        { url: "/portfolio_images/school-1.jpg", alt: "Dashboard Overview" },
+        { url: "/portfolio_images/school-2.jpg", alt: "Student Management" },
+        { url: "/portfolio_images/school-3.jpg", alt: "Teacher Portal" }
+      ]
+    },
+    {
+      id: 4,
+      title: "FlagX – Smartphone Comparison Platform",
+      description: "Built with React, Ballerina, and MongoDB, this platform provides real-time flagship smartphone comparisons and launch updates. Data fetched via Ballerina APIs from Apple/Samsung sources.",
+      techStack: ["React", "Ballerina", "MongoDB", "APIs"],
+      icon: Smartphone,
+      gradient: "from-green-500 to-emerald-500",
+      github: "#",
+      category: "Web Development",
+      images: [
+       
+        { url: "/portfolio_images/flagx2.png", alt: "Specifications View" },
+       
+      ]
+    }
+ 
+  ];
+
+  const techStackColors = {
+    "Next.js": "bg-black text-white",
+    "Tailwind CSS": "bg-cyan-500 text-white",
+    "React": "bg-blue-500 text-white",
+    "JavaScript": "bg-yellow-500 text-black",
+    "Arduino": "bg-teal-600 text-white",
+    "C++": "bg-blue-600 text-white",
+    "IoT": "bg-green-600 text-white",
+    "Sensors": "bg-orange-500 text-white",
+    "Angular": "bg-red-600 text-white",
+    "Node.js": "bg-green-500 text-white",
+    "Express": "bg-gray-700 text-white",
+    "SQLite": "bg-blue-400 text-white",
+    "Ballerina": "bg-purple-600 text-white",
+    "MongoDB": "bg-green-700 text-white",
+    "APIs": "bg-indigo-500 text-white",
+    "ASP.NET Core": "bg-purple-700 text-white",
+    "C#": "bg-purple-500 text-white",
+    "MS SQL": "bg-red-700 text-white",
+    "Flask": "bg-gray-800 text-white",
+    "AI": "bg-gradient-to-r from-purple-500 to-pink-500 text-white"
+  };
+
+  const nextImage = (projectId) => {
+    const project = projects.find(p => p.id === projectId);
+    if (project && project.images.length > 1) {
+      setCurrentImageIndex(prev => ({
+        ...prev,
+        [projectId]: ((prev[projectId] || 0) + 1) % project.images.length
+      }));
+    }
+  };
+
+  const prevImage = (projectId) => {
+    const project = projects.find(p => p.id === projectId);
+    if (project && project.images.length > 1) {
+      setCurrentImageIndex(prev => ({
+        ...prev,
+        [projectId]: ((prev[projectId] || 0) - 1 + project.images.length) % project.images.length
+      }));
+    }
+  };
+
+  return (
+    <section 
+      id="projects" 
+      className="relative py-20 px-6 min-h-screen"
+      style={{
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1))',
+      }}
+    >
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-8 h-8 bg-black-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-8 h-8 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute top-40 left-1/2 w-8 h-8 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-500"></div>
+      </div>
+
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            My Projects
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto mb-6"></div>
+          <p className="text-gray-200 max-w-3xl mx-auto text-lg">
+            A showcase of my technical journey through various domains - from web development 
+            to IoT systems, each project represents a unique challenge and learning experience.
+          </p>
+        </div>
+
+        <div className="space-y-12">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 ${
+                index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
+              } flex flex-col lg:flex`}
+              style={{
+                animationDelay: `${index * 150}ms`,
+                animation: 'fadeInUp 0.6s ease-out forwards'
+              }}
+            >
+              {/* Project Image */}
+              <div className="lg:w-1/2 relative overflow-hidden">
+                <div className="w-full  lg:h-150 relative group-hover:scale-105 transition-transform duration-500 bg-gray-900/50 flex items-center justify-center">
+                  {project.images && project.images.length > 0 ? (
+                    <>
+                      {/* Main Image */}
+                      <img
+                        src={project.images[currentImageIndex[project.id] || 0]?.url}
+                        alt={project.images[currentImageIndex[project.id] || 0]?.alt}
+                        className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
+                        style={{ 
+                          maxHeight: '90%',
+                          maxWidth: '90%'
+                        }}
+                        onError={(e) => {
+                          // Fallback to gradient background if image fails to load
+                          console.log(`Failed to load image: ${e.target.src}`);
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      
+                      {/* Fallback gradient background */}
+                    
+
+                      {/* Navigation arrows for multiple images */}
+                      {project.images.length > 1 && (
+                        <>
+                          <button
+                            onClick={() => prevImage(project.id)}
+                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          >
+                            <ChevronLeft className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={() => nextImage(project.id)}
+                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          >
+                            <ChevronRight className="w-4 h-4" />
+                          </button>
+
+                          {/* Image indicators */}
+                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                            {project.images.map((_, imgIndex) => (
+                              <button
+                                key={imgIndex}
+                                onClick={() => setCurrentImageIndex(prev => ({ ...prev, [project.id]: imgIndex }))}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                  (currentImageIndex[project.id] || 0) === imgIndex 
+                                    ? 'bg-white' 
+                                    : 'bg-white/50 hover:bg-white/75'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      )}
+                    </>
+                  ) : (
+                    // Fallback when no images are provided
+                    <div className={`absolute inset-0 w-full h-full bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                      
+                    </div>
+                  )}
+                  
+                  {/* Animated overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-black-500/20 to-black-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              </div>
+
+              {/* Project Content */}
+              <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+                {/* Category Tag */}
+                <div className="inline-block self-start px-3 py-1 bg-white/10 rounded-full text-xs text-gray-300 mb-4 border border-white/20">
+                  {project.category}
+                </div>
+
+                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-pink-300 transition-colors duration-300">
+                  {project.title}
+                </h3>
+
+                <p className="text-gray-300 text-base leading-relaxed mb-6">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {project.techStack.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className={`px-3 py-1 rounded-full text-sm font-medium border border-white/20 ${
+                        techStackColors[tech] || 'bg-gray-600 text-white'
+                      } hover:scale-105 transition-transform duration-200`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* GitHub Button */}
+                <div className="flex">
+                  <a
+                    href={project.github}
+                    className="inline-flex items-center space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-3 px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-sm font-medium group/btn hover:scale-105"
+                  >
+                    <Github className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                    <span>View Code</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Hover Effect Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-3 transition-opacity duration-500 pointer-events-none`}></div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .line-clamp-4 {
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default Projects;
