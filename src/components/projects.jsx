@@ -35,8 +35,8 @@ const Projects = () => {
       github: "#",
       category: "Full-Stack Development",
       images: [
-        { url: "/portfolio_images/prescrypt-1.jpg", alt: "Login Dashboard" },
-        { url: "/portfolio_images/prescrypt-2.jpg", alt: "Patient Records" }
+        { url: "${process.env.PUBLIC_URL}/portfolio_images/prescrypt-1.jpg", alt: "Login Dashboard" },
+        { url: "${process.env.PUBLIC_URL}/portfolio_images/prescrypt-2.jpg", alt: "Patient Records" }
       ]
     },
     {
@@ -49,7 +49,7 @@ const Projects = () => {
       github: "#",
       category: "IoT & Hardware",
       images: [
-        { url: "/portfolio_images/watertank2.jpg", alt: "Arduino Setup" },
+        { url: "${process.env.PUBLIC_URL}/portfolio_images/watertank2.jpg", alt: "Arduino Setup" },
 
        
       ]
@@ -64,9 +64,9 @@ const Projects = () => {
       github: "#",
       category: "Full-Stack Development",
       images: [
-        { url: "/portfolio_images/school-1.jpg", alt: "Dashboard Overview" },
-        { url: "/portfolio_images/school-2.jpg", alt: "Student Management" },
-        { url: "/portfolio_images/school-3.jpg", alt: "Teacher Portal" }
+        { url: "${process.env.PUBLIC_URL}/portfolio_images/school-1.jpg", alt: "Dashboard Overview" },
+        { url: "${process.env.PUBLIC_URL}/portfolio_images/school-2.jpg", alt: "Student Management" },
+        { url: "${process.env.PUBLIC_URL}/portfolio_images/school-3.jpg", alt: "Teacher Portal" }
       ]
     },
     {
@@ -80,7 +80,7 @@ const Projects = () => {
       category: "Web Development",
       images: [
        
-        { url: "/portfolio_images/flagx2.png", alt: "Specifications View" },
+        { url: "${process.env.PUBLIC_URL}/portfolio_images/flagx2.png", alt: "Specifications View" },
        
       ]
     }
