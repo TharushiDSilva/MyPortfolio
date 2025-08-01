@@ -116,8 +116,8 @@
 //       date: "2024",
 //       color: "from-amber-500 to-orange-600",
 //       images: [
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/jpura1.jpg",
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/jpura2.jpg"
+//         "/portfolio_images/achievements/jpura1.jpg",
+//         "/portfolio_images/achievements/jpura2.jpg"
 //       ]
 //     },
 //     {
@@ -129,8 +129,8 @@
 //       date: "2025",
 //       color: "from-blue-500 to-cyan-600",
 //       images: [
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/codejam1.jpg",
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/codejam2.jpg"
+//         "/portfolio_images/achievements/codejam1.jpg",
+//         "/portfolio_images/achievements/codejam2.jpg"
 //       ]
 //     },
 //     {
@@ -142,8 +142,8 @@
 //       date: "2024",
 //       color: "from-purple-500 to-indigo-600",
 //       images: [
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/coderush1.jpg",
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/coderush2.jpg"
+//         "/portfolio_images/achievements/coderush1.jpg",
+//         "/portfolio_images/achievements/coderush2.jpg"
 //       ]
 //     },
 //     {
@@ -155,8 +155,8 @@
 //       date: "November 2024",
 //       color: "from-green-500 to-emerald-600",
 //       images: [
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/ieee1.jpg",
-//         "${process.env.PUBLIC_URL}/portfolio_images/achievements/ieee2.jpg"
+//         "/portfolio_images/achievements/ieee1.jpg",
+//         "/portfolio_images/achievements/ieee2.jpg"
 //       ]
 //     },
 //     {
@@ -168,8 +168,8 @@
 //       date: "2025",
 //       color: "from-pink-500 to-rose-600",
 //       images: [
-//         "${process.env.PUBLIC_URL}/portfolio_images/main1.jpg",
-//         "${process.env.PUBLIC_URL}/portfolio_images/main2.jpg"
+//         "/portfolio_images/main1.jpg",
+//         "/portfolio_images/main2.jpg"
 //       ]
 //     }
 //   ];
