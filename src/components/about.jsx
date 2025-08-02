@@ -115,7 +115,7 @@ const AboutMe = () => {
     { name: "Node.js", logo: "/portfolio_images/node.png", fallback: "Node", color: "from-black-500/30 to-black-600/30" },
     
     // AI & Chatbot
-    { name: "Google Gemini API", logo: "/portfolio_images/gemini.png", fallback: "Gemini", color: "from-purple-500/30 to-pink-500/30" },
+    { name: "Google Gemini API", logo: "./portfolio_images/gemini.png", fallback: "Gemini", color: "from-purple-500/30 to-pink-500/30" },
     { name: "Flask", logo: "/portfolio_images/flask.png", fallback: "Flask", color: "from-white-100/30 to-purple-800/30" },
     { name: "NLP Basics", logo: "/portfolio_images/nlp.png", fallback: "NLP", color: "from-indigo-500/30 to-purple-600/30" },
     
