@@ -160,11 +160,11 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
             Get In Touch
           </a>
           <a
-            href="/TharushiDeSilva_224035N.pdf"
+             href={`${prefix}/TharushiDeSilva_224035N.pdf`}
             download="TharushiDeSilva_224035N.pdf"
             className="px-8 py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300"
           >
-            Download Resume
+             Resume
           </a>
         </div>
 
