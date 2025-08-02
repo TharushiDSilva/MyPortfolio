@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         {/* Fixed Background Layer */}
         <div className="fixed inset-0 -z-50">
           {/* Consistent Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-600/35 to-pink-700/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-700/60 to-pink-700/50"></div>
           
           {/* Subtle overlay for consistency */}
           <div className="absolute inset-0 bg-black/80"></div>

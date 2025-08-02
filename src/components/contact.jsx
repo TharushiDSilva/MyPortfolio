@@ -15,20 +15,20 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'tharushi@example.com',
-      href: 'mailto:tharushi@example.com'
+      value: 'desilva.tharushiw@gmail.com',
+      href: 'mailto:desilva.tharushiw@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+94 123 456 789',
-      href: 'tel:+94123456789'
+      value: '071 137 4744',
+      href: 'tel:+94711374744'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Colombo, Sri Lanka',
-      href: '#'
+      value: 'Sri Lanka',
+      
     }
   ];
 
@@ -148,8 +148,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 focus:outline-none transition-all duration-300"
-                    placeholder="John Doe"
-                    required
+                    placeholder=""
                   />
                 </div>
                 <div>
@@ -162,8 +161,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 focus:outline-none transition-all duration-300"
-                    placeholder="john@example.com"
-                    required
+                    placeholder=""
                   />
                 </div>
               </div>
@@ -178,7 +176,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 focus:outline-none transition-all duration-300"
-                  placeholder="Project Inquiry"
+                  placeholder=""
                   required
                 />
               </div>
@@ -193,7 +191,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20 focus:outline-none transition-all duration-300 resize-none"
-                  placeholder="Tell me about your project or just say hello..."
+                  placeholder="Tell me about your opinion "
                   required
                 />
               </div>

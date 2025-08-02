@@ -12,9 +12,207 @@ import {
   Award,
   Zap,
   Target,
-  Star
+  Star,
+  Users,
+  X,
+  Heart,
+  Crown,
+  Settings,
+  PenTool,
+  Mic,
+  Globe
 } from 'lucide-react';
+
 const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
+
+// Volunteering Modal Component
+const VolunteeringModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  const volunteeringData = {
+    leadership: [
+      {
+        title: "Event Co-Chair",
+        organization: "ENGINUITY 2.0 (IEEE WIE – UoM)",
+        icon: Crown,
+        color: "from-purple-500 to-pink-600"
+      }
+    ],
+    design: [
+      {
+        title: "Design Committee Member",
+        organization: "Computer Society – IEEE University of Moratuwa Student Branch",
+        icon: PenTool,
+        color: "from-blue-500 to-cyan-600"
+      },
+      {
+        title: "Design Committee Member",
+        organization: "IEEE RAS Student Branch Chapter – University of Moratuwa",
+        icon: Palette,
+        color: "from-green-500 to-emerald-600"
+      },
+      {
+        title: "Design Committee Member",
+        organization: "XpertsMora'24 – IEEE Industry Applications Society – UoM",
+        icon: PenTool,
+        color: "from-orange-500 to-red-600"
+      },
+      {
+        title: "Design Committee Member",
+        organization: "Octwave 2.0 – IEEE Industry Applications Society – UoM",
+        icon: Palette,
+        color: "from-indigo-500 to-purple-600"
+      },
+      {
+        title: "Design Committee Member",
+        organization: "IEEE WIE (Women In Engineering) – UoM",
+        icon: PenTool,
+        color: "from-pink-500 to-rose-600"
+      }
+    ],
+    technical: [
+      {
+        title: "Delegate Handling Committee Member",
+        organization: "Innovate with Ballerina 2025",
+        icon: Users,
+        color: "from-teal-500 to-blue-600"
+      },
+      {
+        title: "Programme & Technical Committee Member",
+        organization: "IEEE Xtreme 18.0, Mora Xtreme 9.0",
+        icon: Settings,
+        color: "from-cyan-500 to-teal-600"
+      },
+      {
+        title: "Editorial Committee Member",
+        organization: "IEEE TEMS Student Branch Chapter – UoM",
+        icon: Mic,
+        color: "from-yellow-500 to-orange-600"
+      },
+      {
+        title: "Team Member",
+        organization: "MARCOM Team (Colombo South) – AIESEC in Sri Lanka",
+        icon: Globe,
+        color: "from-violet-500 to-purple-600"
+      }
+    ]
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div className="relative w-full max-w-4xl max-h-[90vh] bg-black/40 backdrop-blur-lg border border-white/20 rounded-2xl overflow-hidden">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-pink-500/20 to-purple-600/20 border-b border-white/10 p-6">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                <Users className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-white">Volunteering Experience</h3>
+                <p className="text-gray-300 text-sm">Contributing beyond academics to tech and creative communities</p>
+              </div>
+            </div>
+            <button 
+              onClick={onClose}
+              className="p-2 rounded-full bg-white/10 hover:bg-red-500/20 transition-colors duration-300 group"
+            >
+              <X className="w-5 h-5 text-gray-300 group-hover:text-red-400" />
+            </button>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+          {/* Description */}
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-8">
+            <div className="flex items-center space-x-3 mb-4">
+              <Heart className="w-6 h-6 text-pink-400" />
+              <h4 className="text-xl font-semibold text-pink-400">My Volunteering Journey</h4>
+            </div>
+            <p className="text-gray-300 leading-relaxed">
+              I love contributing beyond academics by supporting tech and creative communities. 
+              Here are some of the volunteer roles I've enjoyed being part of! Each experience has 
+              taught me valuable skills in teamwork, leadership, and community building.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Leadership Section */}
+            <div>
+              <div className="flex items-center space-x-3 mb-6">
+                <Crown className="w-6 h-6 text-yellow-400" />
+                <h4 className="text-xl font-semibold text-yellow-400">🏅 Leadership & Event Management</h4>
+              </div>
+              <div className="grid gap-4">
+                {volunteeringData.leadership.map((item, index) => (
+                  <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-yellow-400/50 hover:scale-[1.02] transition-all duration-300 group">
+                    <div className="flex items-start space-x-4">
+                      <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <item.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="text-white font-semibold mb-2 group-hover:text-yellow-300 transition-colors duration-300">{item.title}</h5>
+                        <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">{item.organization}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Design Committee Section */}
+            <div>
+              <div className="flex items-center space-x-3 mb-6">
+                <Palette className="w-6 h-6 text-pink-400" />
+                <h4 className="text-xl font-semibold text-pink-400">🎨 Design Committee Roles</h4>
+              </div>
+              <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
+                {volunteeringData.design.map((item, index) => (
+                  <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-pink-400/50 hover:scale-[1.02] transition-all duration-300 group">
+                    <div className="flex items-start space-x-4">
+                      <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <item.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="text-white font-semibold mb-2 group-hover:text-pink-300 transition-colors duration-300">{item.title}</h5>
+                        <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">{item.organization}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technical & Leadership Section */}
+            <div>
+              <div className="flex items-center space-x-3 mb-6">
+                <Settings className="w-6 h-6 text-cyan-400" />
+                <h4 className="text-xl font-semibold text-cyan-400">🛠️ Technical & Leadership Roles</h4>
+              </div>
+              <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
+                {volunteeringData.technical.map((item, index) => (
+                  <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-cyan-400/50 hover:scale-[1.02] transition-all duration-300 group">
+                    <div className="flex items-start space-x-4">
+                      <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <item.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="text-white font-semibold mb-2 group-hover:text-cyan-300 transition-colors duration-300">{item.title}</h5>
+                        <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">{item.organization}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // AchievementCard Component
 const AchievementCard = ({ achievement, index, images = [] }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -102,6 +300,7 @@ const AchievementCard = ({ achievement, index, images = [] }) => {
 
 const AboutMe = () => {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+  const [isVolunteeringModalOpen, setIsVolunteeringModalOpen] = useState(false);
 
   // Skills data with real logo image paths and fallback text
  const skillsData = [
@@ -284,7 +483,7 @@ const AboutMe = () => {
         </div>
 
         {/* Introduction with Image Space */}
-        <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-12">
+        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-12">
           <div className="grid md:grid-cols-3 gap-8 items-center">
             {/* Profile Image Space */}
             <div className="md:col-span-1">
@@ -346,7 +545,7 @@ const AboutMe = () => {
             <div className="space-y-6">
               {education.map((edu, index) => (
                 <div key={index} className="relative">
-                  <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-pink-400/50 transition-all duration-300 ${edu.current ? 'border-pink-400/30 bg-pink-500/5' : ''}`}>
+                  <div className={`bg-black/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-pink-400/50 transition-all duration-300 ${edu.current ? 'border-pink-400/30 bg-pink-500/5' : ''}`}>
                     <div className="flex items-start justify-between mb-3">
                       <span className={`text-sm px-3 py-1 rounded-full ${edu.current ? 'bg-pink-500/20 text-pink-300' : 'bg-purple-500/20 text-purple-300'}`}>
                         {edu.period}
@@ -385,9 +584,9 @@ const AboutMe = () => {
             </h3>
             
             {/* Horizontal Scrolling Skills Display */}
-            <div className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-xl p-6 mb-6 overflow-hidden">
+            <div className="bg-black/30 backdrop-blur-sm border border-black/10 rounded-xl p-6 mb-6 overflow-hidden">
               <div className="flex items-center justify-between mb-4">
-                <h4 className="text-white font-medium">Tech Stack</h4>
+               
                 <div className="flex items-center space-x-2">
                   <button 
                     onClick={prevSkill}
@@ -519,8 +718,34 @@ const AboutMe = () => {
           </div>
         </div>
 
-      
+        {/* Volunteering Experience Section */}
+        <div className="mt-16">
+          <div className="bg-black/3 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <Users className="w-8 h-8 text-pink-400" />
+              <h3 className="text-2xl font-semibold text-pink-400">Community Involvement</h3>
+            </div>
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+              👥 Want to see my volunteering experiences? I've been actively involved in various committees and organizations, 
+              contributing to design, technical, and leadership roles across multiple events and initiatives.
+            </p>
+            <button
+              onClick={() => setIsVolunteeringModalOpen(true)}
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-black-500 to-black-600 text-white font-medium rounded-full hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
+            >
+              <Users className="w-5 h-5 mr-2" />
+              View My Volunteering Journey
+              <ChevronRight className="w-4 h-4 ml-2" />
+            </button>
+          </div>
+        </div>
       </div>
+
+      {/* Volunteering Modal */}
+      <VolunteeringModal 
+        isOpen={isVolunteeringModalOpen} 
+        onClose={() => setIsVolunteeringModalOpen(false)} 
+      />
     </section>
   );
 };
