@@ -20,7 +20,7 @@ const Hero = () => {
     'a Tech Enthusiast',
     'a Learner'
   ];
-
+const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
   // Three.js Background Animation
   useEffect(() => {
     const loadVanta = async () => {
@@ -137,7 +137,7 @@ const Hero = () => {
             {/* Gradient border wrapper */}
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 p-1 hover:scale-105 transition-transform duration-300 shadow-lg">
               <img 
-                src="/portfolio_images/main5.jpg" 
+                src={`${prefix}/portfolio_images/main5.jpg`}
                 alt="Tharushi De Silva"
                 className="w-full h-full rounded-full object-cover"
               />
