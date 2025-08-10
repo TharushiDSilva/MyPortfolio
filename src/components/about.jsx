@@ -233,7 +233,7 @@ const AchievementCard = ({ achievement, index, images = [] }) => {
 
   return (
     <div 
-      className="relative bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-pink-400/50 hover:scale-105 transition-all duration-300 group overflow-hidden"
+      className="relative bg-black/20 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:border-pink-400/50 hover:scale-105 transition-all duration-300 group overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -266,8 +266,8 @@ const AchievementCard = ({ achievement, index, images = [] }) => {
       {/* Content */}
       <div className="relative z-10">
         {/* Icon */}
-        <div className={`w-12 h-12 bg-gradient-to-r ${achievement.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-          <achievement.icon className="w-6 h-6 text-white" />
+        <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r ${achievement.color} rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+          <achievement.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
         </div>
 
         {/* Title */}
@@ -470,25 +470,25 @@ const AboutMe = () => {
   return (
     <section 
       id="about" 
-      className="relative py-20 px-6 bg-black-400"
+      className="relative py-12 sm:py-20 px-4 sm:px-6 bg-black-400 w-full"
       style={{ minHeight: '100vh' }}
     >
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 w-full max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             About Me
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto mb-6"></div>
         </div>
 
         {/* Introduction with Image Space */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-12">
-          <div className="grid md:grid-cols-3 gap-8 items-center">
+        <div className="w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 mb-8 sm:mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-center">
             {/* Profile Image Space */}
-            <div className="md:col-span-1">
-              <div className="relative">
-                <div className="w-64 h-64 mx-auto bg-gradient-to-br from-pink-500/20 to-purple-600/20 rounded-2xl border-2 border-pink-400/30 overflow-hidden">
+            <div className="col-span-1 md:col-span-1 flex justify-center">
+              <div className="relative w-full max-w-sm">
+                <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto bg-gradient-to-br from-pink-500/20 to-purple-600/20 rounded-2xl border-2 border-pink-400/30 overflow-hidden">
                   <img 
                     src={`${prefix}/portfolio_images/main1.jpg`}
                     alt="Profile" 
@@ -515,14 +515,14 @@ const AboutMe = () => {
             </div>
             
             {/* Introduction Text */}
-            <div className="md:col-span-2">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <GraduationCap className="w-6 h-6 text-pink-400" />
+            <div className="col-span-1 md:col-span-2 w-full">
+              <div className="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-3 w-full">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-500/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6 text-pink-400" />
                 </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-pink-400 mb-4">Brief Introduction</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                <div className="flex-1 w-full">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-pink-400 mb-3 sm:mb-4">Brief Introduction</h3>
+                  <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
                     I am a motivated IT undergraduate with a keen interest in UI/UX design and Software Engineering. 
                     Currently studying for a BSc (Hons) in Information Technology at the Faculty of IT, University of Moratuwa, 
                     I enjoy blending creativity with technology to build meaningful user experiences and efficient systems. 
@@ -535,19 +535,19 @@ const AboutMe = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Education Timeline */}
-          <div>
-            <h3 className="text-2xl font-semibold text-pink-400 mb-8 flex items-center">
-              <Calendar className="w-6 h-6 mr-3" />
+          <div className="w-full">
+            <h3 className="text-xl sm:text-2xl font-semibold text-pink-400 mb-6 sm:mb-8 flex items-center">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
               Education Timeline
             </h3>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6 w-full">
               {education.map((edu, index) => (
                 <div key={index} className="relative">
-                  <div className={`bg-black/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-pink-400/50 transition-all duration-300 ${edu.current ? 'border-pink-400/30 bg-pink-500/5' : ''}`}>
-                    <div className="flex items-start justify-between mb-3">
-                      <span className={`text-sm px-3 py-1 rounded-full ${edu.current ? 'bg-pink-500/20 text-pink-300' : 'bg-purple-500/20 text-purple-300'}`}>
+                  <div className={`bg-black/50 backdrop-blur-sm border border-white/10 rounded-xl p-4 sm:p-6 hover:border-pink-400/50 transition-all duration-300 ${edu.current ? 'border-pink-400/30 bg-pink-500/5' : ''}`}>
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 gap-2">
+                      <span className={`text-xs sm:text-sm px-3 py-1 rounded-full w-fit ${edu.current ? 'bg-pink-500/20 text-pink-300' : 'bg-purple-500/20 text-purple-300'}`}>
                         {edu.period}
                       </span>
                       {edu.current && (
@@ -557,19 +557,19 @@ const AboutMe = () => {
                         </div>
                       )}
                     </div>
-                    <h4 className="text-white font-semibold mb-2">{edu.degree}</h4>
+                    <h4 className="text-white font-semibold mb-2 text-sm sm:text-base leading-tight">{edu.degree}</h4>
                     <div className="flex items-start space-x-2 text-gray-300">
-                      <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                      <div>
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4 mt-1 flex-shrink-0" />
+                      <div className="text-xs sm:text-sm">
                         <p>{edu.institution}</p>
                         {edu.subjects && (
-                          <p className="text-sm text-gray-400 mt-1">Subjects: {edu.subjects}</p>
+                          <p className="text-gray-400 mt-1">Subjects: {edu.subjects}</p>
                         )}
                       </div>
                     </div>
                   </div>
                   {index < education.length - 1 && (
-                    <div className="absolute left-6 -bottom-3 w-0.5 h-6 bg-gradient-to-b from-pink-500/50 to-transparent"></div>
+                    <div className="absolute left-4 sm:left-6 -bottom-2 sm:-bottom-3 w-0.5 h-4 sm:h-6 bg-gradient-to-b from-pink-500/50 to-transparent"></div>
                   )}
                 </div>
               ))}
@@ -577,16 +577,15 @@ const AboutMe = () => {
           </div>
 
           {/* Skills Showcase */}
-          <div>
-            <h3 className="text-2xl font-semibold text-pink-400 mb-8 flex items-center">
-              <Code className="w-6 h-6 mr-3" />
+          <div className="w-full">
+            <h3 className="text-xl sm:text-2xl font-semibold text-pink-400 mb-6 sm:mb-8 flex items-center">
+              <Code className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
               Skills & Technologies
             </h3>
             
             {/* Horizontal Scrolling Skills Display */}
-            <div className="bg-black/30 backdrop-blur-sm border border-black/10 rounded-xl p-6 mb-6 overflow-hidden">
-              <div className="flex items-center justify-between mb-4">
-               
+            <div className="w-full bg-black/30 backdrop-blur-sm border border-black/10 rounded-xl p-4 sm:p-6 mb-4 sm:mb-6 overflow-hidden">
+              <div className="flex items-center justify-between mb-4 w-full">
                 <div className="flex items-center space-x-2">
                   <button 
                     onClick={prevSkill}
@@ -603,39 +602,39 @@ const AboutMe = () => {
                 </div>
               </div>
               
-              {/* Horizontal Skills Slider */}
-              <div className="relative">
+              {/* Horizontal Skills Slider - Responsive */}
+              <div className="relative w-full overflow-hidden">
                 <div 
-                  className="flex transition-transform duration-500 ease-out"
+                  className="flex transition-transform duration-500 ease-out w-full"
                   style={{ 
-                    transform: `translateX(-${currentSkillIndex * 120}px)`,
-                    width: `${allSkills.length * 120}px`
+                    transform: `translateX(-${currentSkillIndex * 100}px)`,
+                    minWidth: `${allSkills.length * 100}px`
                   }}
                 >
                   {allSkills.map((skill, index) => (
                     <div 
                       key={index}
-                      className={`flex-shrink-0 w-28 h-32 mr-4 rounded-xl p-4 border transition-all duration-300 ${
+                      className={`flex-shrink-0 w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 mr-3 sm:mr-4 rounded-xl p-2 sm:p-3 md:p-4 border transition-all duration-300 ${
                         index === currentSkillIndex 
                           ? 'border-pink-400/50 bg-pink-500/10 scale-105' 
                           : 'border-white/10 bg-white/3 hover:border-pink-400/30'
                       }`}
                     >
-                      <div className={`w-12 h-12 bg-gradient-to-r ${skill.color} rounded-lg flex items-center justify-center mb-3 mx-auto shadow-lg border border-white/20`}>
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-gradient-to-r ${skill.color} rounded-lg flex items-center justify-center mb-2 sm:mb-3 mx-auto shadow-lg border border-white/20`}>
                         <img 
                           src={skill.logo} 
                           alt={skill.name}
-                          className="w-8 h-8 object-contain"
+                          className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 object-contain"
                           onError={(e) => {
                             e.target.style.display = 'none';
                             e.target.nextSibling.style.display = 'flex';
                           }}
                         />
-                        <div className="w-8 h-8 text-xs font-bold text-white hidden items-center justify-center text-center leading-tight">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8 text-xs font-bold text-white hidden items-center justify-center text-center leading-tight">
                           {skill.fallback}
                         </div>
                       </div>
-                      <div className="text-center">
+                      <div className="text-center px-1">
                         <div className={`text-xs font-medium leading-tight ${index === currentSkillIndex ? 'text-pink-300' : 'text-white'}`}>
                           {skill.name}
                         </div>
@@ -660,35 +659,35 @@ const AboutMe = () => {
               </div>
             </div>
 
-            {/* Skills categories */}
-            <div className="space-y-4">
+            {/* Skills categories - Mobile Responsive */}
+            <div className="space-y-3 sm:space-y-4">
               {skillCategories.map((category, index) => (
-                <div key={index} className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-lg p-4 hover:border-pink-400/30 transition-all duration-300">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <category.icon className="w-5 h-5 text-pink-400" />
-                    <h4 className="text-white font-medium">{category.category}</h4>
+                <div key={index} className="bg-white/3 backdrop-blur-sm border border-white/10 rounded-lg p-3 sm:p-4 hover:border-pink-400/30 transition-all duration-300">
+                  <div className="flex items-center space-x-2 sm:space-x-3 mb-3">
+                    <category.icon className="w-4 h-4 sm:w-5 sm:h-5 text-pink-400" />
+                    <h4 className="text-white font-medium text-sm sm:text-base">{category.category}</h4>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
                       <div 
                         key={skillIndex}
-                        className="flex items-center space-x-2 px-3 py-2 bg-white/5 rounded-full hover:bg-pink-500/20 transition-all duration-300 group border border-white/10"
+                        className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-1 sm:py-2 bg-white/5 rounded-full hover:bg-pink-500/20 transition-all duration-300 group border border-white/10"
                       >
-                        <div className={`w-6 h-6 bg-gradient-to-r ${skill.color} rounded flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-white/20`}>
+                        <div className={`w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r ${skill.color} rounded flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-white/20`}>
                           <img 
                             src={skill.logo} 
                             alt={skill.name}
-                            className="w-4 h-4 object-contain"
+                            className="w-3 h-3 sm:w-4 sm:h-4 object-contain"
                             onError={(e) => {
                               e.target.style.display = 'none';
                               e.target.nextSibling.style.display = 'flex';
                             }}
                           />
-                          <div className="w-4 h-4 text-xs font-bold text-white hidden items-center justify-center text-center" style={{fontSize: '8px'}}>
+                          <div className="w-3 h-3 sm:w-4 sm:h-4 text-xs font-bold text-white hidden items-center justify-center text-center" style={{fontSize: '6px'}}>
                             {skill.fallback}
                           </div>
                         </div>
-                        <span className="text-sm text-gray-300 group-hover:text-pink-300 transition-colors duration-300">
+                        <span className="text-xs sm:text-sm text-gray-300 group-hover:text-pink-300 transition-colors duration-300">
                           {skill.name}
                         </span>
                       </div>
@@ -700,13 +699,13 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Achievements Section - Using AchievementCard Component */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-pink-400 mb-8 flex items-center">
-            <Trophy className="w-6 h-6 mr-3" />
+        {/* Achievements Section - Mobile Responsive */}
+        <div className="mt-12 sm:mt-16">
+          <h3 className="text-xl sm:text-2xl font-semibold text-pink-400 mb-6 sm:mb-8 flex items-center">
+            <Trophy className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
             Key Achievements
           </h3>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {achievements.map((achievement, index) => (
               <AchievementCard 
                 key={index}
@@ -718,24 +717,24 @@ const AboutMe = () => {
           </div>
         </div>
 
-        {/* Volunteering Experience Section */}
-        <div className="mt-16">
-          <div className="bg-black/3 backdrop-blur-sm border border-white/10 rounded-2xl p-8 text-center">
+        {/* Volunteering Experience Section - Mobile Responsive */}
+        <div className="mt-12 sm:mt-16">
+          <div className="bg-black/3 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 text-center">
             <div className="flex items-center justify-center space-x-3 mb-4">
-              <Users className="w-8 h-8 text-pink-400" />
-              <h3 className="text-2xl font-semibold text-pink-400">Community Involvement</h3>
+              <Users className="w-6 h-6 sm:w-8 sm:h-8 text-pink-400" />
+              <h3 className="text-xl sm:text-2xl font-semibold text-pink-400">Community Involvement</h3>
             </div>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
               👥 Want to see my volunteering experiences? I've been actively involved in various committees and organizations, 
               contributing to design, technical, and leadership roles across multiple events and initiatives.
             </p>
             <button
               onClick={() => setIsVolunteeringModalOpen(true)}
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-black-500 to-black-600 text-white font-medium rounded-full hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
+              className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-black-500 to-black-600 text-white font-medium rounded-full hover:from-pink-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25 text-sm sm:text-base"
             >
-              <Users className="w-5 h-5 mr-2" />
+              <Users className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               View My Volunteering Journey
-              <ChevronRight className="w-4 h-4 ml-2" />
+              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
             </button>
           </div>
         </div>
