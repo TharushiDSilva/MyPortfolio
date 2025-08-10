@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +19,13 @@ const Navbar = () => {
     <nav className="p-1 w-full fixed top-0 z-50 bg-transparent">
       <div className="max-w-8xl mx-auto  flex justify-between items-center px-3 bg-black/80 backdrop-blur-md rounded-lg shadow-lg">
         {/* Logo */}
-        <a href="/">
+        <Link href="/">
           <img
             src={`${prefix}/portfolio_images/signature.png`}
             alt="Logo"
             className="h-16 w-auto"
           />
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">
