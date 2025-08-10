@@ -151,20 +151,20 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
           Welcome to my portfolio! I create digital experiences that inspire and engage.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 ">
           <a
             href="#contact"
             onClick={scrollToContact}
             className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-pink-500/25"
           >
-            Get In Touch
+            Get Connected
           </a>
           <a
              href={`${prefix}/TharushiDeSilva_224035N.pdf`}
             download="TharushiDeSilva_224035N.pdf"
             className="px-8 py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300"
           >
-             Resume
+             Download Resume
           </a>
         </div>
 
