@@ -161,8 +161,8 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
             Get Connected
           </a>
           <a
-             href={`${prefix}/TharushiDeSilva_224035N.pdf`}
-            download="TharushiDeSilva_224035N.pdf"
+             href={`${prefix}/Tharushi De Silva CV.pdf`}
+            download="Tharushi De Silva CV.pdf"
             className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300 text-sm sm:text-base"
           >
              Download Resume
