@@ -13,7 +13,9 @@ import {
   ChevronRight,
   Contact,
 } from "lucide-react";
+
 const prefix = process.env.NODE_ENV === "production" ? "/MyPortfolio" : "";
+
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState({});
@@ -67,7 +69,6 @@ const Projects = () => {
       techStack: ["Arduino", "C++", "IoT", "Sensors"],
       icon: Droplets,
       gradient: "from-blue-400 to-teal-500",
-      
       category: "IoT & Hardware",
       images: [
         {
@@ -85,19 +86,22 @@ const Projects = () => {
       title: "Personal Portfolio Website",
       description:
         "This portfolio website is a modern, responsive web application built using Next.js and Tailwind CSS. It showcases my projects, technical skills, and about me in a clean and interactive layout. The site supports smooth navigation, project filtering, and a dark theme. It's deployed on GitHub Pages with a custom asset prefix and export configuration to support static hosting. The project emphasizes accessibility, performance optimization, and developer-friendly practices.",
-      techStack: ["Next.js", "Tailwind CSS", "JavaScript", "GitHub Pages"],
-      icon: Code, // or use another icon you imported
-      gradient: "from-blue-500 to-cyan-500",
+      techStack: ["Next.js", "Tailwind CSS"],
+      icon: Code,
+      gradient: "from-pink-500 to-cyan-500",
       github: "https://github.com/tharushidsilva/MyPortfolio",
       category: "Frontend Development",
       images: [
         {
           url: `${prefix}/portfolio_images/portfolio.png`,
           alt: "Portfolio Homepage",
+        },
+        {
+          url: `${prefix}/portfolio_images/portfolio1.png`,
+          alt: "Portfolio Projects",
         }
       ],
     },
-
     {
       id: 3,
       title: "School Information Management System",
@@ -216,7 +220,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 ${
+              className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-white/20 transition-all duration-700 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20 ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } flex flex-col lg:flex`}
               style={{
@@ -224,54 +228,63 @@ const Projects = () => {
                 animation: "fadeInUp 0.6s ease-out forwards",
               }}
             >
-              {/* Project Image */}
+              {/* Project Image - Fixed height container */}
               <div className="lg:w-1/2 relative overflow-hidden">
-                <div className="w-full  lg:h-150 relative group-hover:scale-105 transition-transform duration-500 bg-gray-900/50 flex items-center justify-center">
+                <div 
+                  className="w-full h-80 md:h-96 lg:h-full lg:min-h-[400px] relative bg-gray-900/50 flex items-center justify-center"
+                  style={{ 
+                    minHeight: '320px' // Ensures consistent height on mobile
+                  }}
+                >
                   {project.images && project.images.length > 0 ? (
                     <>
-                      {/* Main Image */}
-                      <img
-                        src={
-                          project.images[currentImageIndex[project.id] || 0]
-                            ?.url
-                        }
-                        alt={
-                          project.images[currentImageIndex[project.id] || 0]
-                            ?.alt
-                        }
-                        className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
-                        style={{
-                          maxHeight: "90%",
-                          maxWidth: "90%",
-                        }}
-                        onError={(e) => {
-                          // Fallback to gradient background if image fails to load
-                          console.log(`Failed to load image: ${e.target.src}`);
-                          e.target.style.display = "none";
-                          e.target.nextSibling.style.display = "flex";
-                        }}
-                      />
+                      {/* Image Container with Fade Transition */}
+                      <div className="absolute inset-0 flex items-center justify-center p-4">
+                        {project.images.map((image, imgIndex) => (
+                          <img
+                            key={imgIndex}
+                            src={image.url}
+                            alt={image.alt}
+                            className={`absolute max-w-full max-h-full object-contain rounded-lg shadow-lg transition-all duration-700 ease-in-out transform ${
+                              (currentImageIndex[project.id] || 0) === imgIndex
+                                ? 'opacity-100 scale-100'
+                                : 'opacity-0 scale-95'
+                            }`}
+                            style={{
+                              maxHeight: 'calc(100% - 2rem)',
+                              maxWidth: 'calc(100% - 2rem)',
+                            }}
+                            onError={(e) => {
+                              console.log(`Failed to load image: ${e.target.src}`);
+                              e.target.style.display = "none";
+                            }}
+                          />
+                        ))}
+                      </div>
 
                       {/* Fallback gradient background */}
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 -z-10`}
+                      />
 
                       {/* Navigation arrows for multiple images */}
                       {project.images.length > 1 && (
                         <>
                           <button
                             onClick={() => prevImage(project.id)}
-                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full opacity-70 hover:opacity-100 transition-all duration-300 z-10"
                           >
                             <ChevronLeft className="w-4 h-4" />
                           </button>
                           <button
                             onClick={() => nextImage(project.id)}
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full opacity-70 hover:opacity-100 transition-all duration-300 z-10"
                           >
                             <ChevronRight className="w-4 h-4" />
                           </button>
 
                           {/* Image indicators */}
-                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
                             {project.images.map((_, imgIndex) => (
                               <button
                                 key={imgIndex}
@@ -282,9 +295,8 @@ const Projects = () => {
                                   }))
                                 }
                                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                  (currentImageIndex[project.id] || 0) ===
-                                  imgIndex
-                                    ? "bg-white"
+                                  (currentImageIndex[project.id] || 0) === imgIndex
+                                    ? "bg-white scale-125"
                                     : "bg-white/50 hover:bg-white/75"
                                 }`}
                               />
@@ -297,35 +309,37 @@ const Projects = () => {
                     // Fallback when no images are provided
                     <div
                       className={`absolute inset-0 w-full h-full bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
-                    ></div>
+                    >
+                      <project.icon className="w-16 h-16 text-white/70" />
+                    </div>
                   )}
 
-                  {/* Animated overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-black-500/20 to-black-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
                 </div>
               </div>
 
               {/* Project Content */}
-              <div className="lg:w-1/2 p-8 flex flex-col justify-center">
+              <div className="lg:w-1/2 p-6 md:p-8 flex flex-col justify-center">
                 {/* Category Tag */}
                 <div className="inline-block self-start px-3 py-1 bg-white/10 rounded-full text-xs text-gray-300 mb-4 border border-white/20">
                   {project.category}
                 </div>
 
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-pink-300 transition-colors duration-300">
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-pink-300 transition-colors duration-300">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-300 text-base leading-relaxed mb-6">
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 line-clamp-6 md:line-clamp-none">
                   {project.description}
                 </p>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-8">
+                <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
                   {project.techStack.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className={`px-3 py-1 rounded-full text-sm font-medium border border-white/20 ${
+                      className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium border border-white/20 ${
                         techStackColors[tech] || "bg-gray-600 text-white"
                       } hover:scale-105 transition-transform duration-200`}
                     >
@@ -338,9 +352,11 @@ const Projects = () => {
                 <div className="flex">
                   <a
                     href={project.github}
-                    className="inline-flex items-center space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-3 px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-sm font-medium group/btn hover:scale-105"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 md:space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-xs md:text-sm font-medium group/btn hover:scale-105"
                   >
-                    <Github className="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                    <Github className="w-4 h-4 md:w-5 md:h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
                     <span>View Code</span>
                   </a>
                 </div>
@@ -348,7 +364,7 @@ const Projects = () => {
 
               {/* Hover Effect Overlay */}
               <div
-                className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-3 transition-opacity duration-500 pointer-events-none`}
+                className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
               ></div>
             </div>
           ))}
@@ -370,6 +386,13 @@ const Projects = () => {
         .line-clamp-4 {
           display: -webkit-box;
           -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .line-clamp-6 {
+          display: -webkit-box;
+          -webkit-line-clamp: 6;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }

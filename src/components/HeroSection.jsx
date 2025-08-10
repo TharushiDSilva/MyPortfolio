@@ -123,8 +123,9 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
       
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-auto mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Hi, I am{' '}
+        {/* Desktop: single line, Mobile: two lines with smaller font */}
+        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <span className="block md:inline">Hi, I am{' '}</span>
           <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 bg-clip-text text-transparent">
             {currentWord}
           </span>
@@ -132,10 +133,10 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
         </h1>
         
         {/* Profile Image */}
-        <div className="mb-8 flex justify-center">
+        <div className="mb-6 md:mb-8 flex justify-center">
           <div className="relative">
             {/* Gradient border wrapper */}
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 p-1 hover:scale-105 transition-transform duration-300 shadow-lg">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 p-1 hover:scale-105 transition-transform duration-300 shadow-lg">
               <img 
                 src={`${prefix}/portfolio_images/main5.jpg`}
                 alt="Tharushi De Silva"
@@ -147,22 +148,22 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
           </div>
         </div>
         
-        <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
           Welcome to my portfolio! I create digital experiences that inspire and engage.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 ">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 md:mb-8">
           <a
             href="#contact"
             onClick={scrollToContact}
-            className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-pink-500/25"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-pink-500/25 text-sm sm:text-base"
           >
             Get Connected
           </a>
           <a
              href={`${prefix}/TharushiDeSilva_224035N.pdf`}
             download="TharushiDeSilva_224035N.pdf"
-            className="px-8 py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300"
+            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300 text-sm sm:text-base"
           >
              Download Resume
           </a>
