@@ -156,14 +156,14 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
           <a
             href="#contact"
             onClick={scrollToContact}
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-pink-500/25 text-sm sm:text-base"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-pink-500/25 text-sm sm:text-base w-full sm:w-56 text-center"
           >
             Get Connected
           </a>
           <a
              href={`${prefix}/Tharushi De Silva CV.pdf`}
             download="Tharushi De Silva CV.pdf"
-            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300 text-sm sm:text-base"
+            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300 text-sm sm:text-base w-full sm:w-56 text-center"
           >
              Download Resume
           </a>
