@@ -99,7 +99,7 @@ const Projects = () => {
         {
           url: `${prefix}/portfolio_images/portfolio1.png`,
           alt: "Portfolio Projects",
-        }
+        },
       ],
     },
     {
@@ -110,7 +110,8 @@ const Projects = () => {
       techStack: ["Angular", "Node.js", "Express", "SQLite"],
       icon: GraduationCap,
       gradient: "from-purple-500 to-indigo-500",
-      github: "https://github.com/TharushiDSilva/assignment---capstone-project-sandareka",
+      github:
+        "https://github.com/TharushiDSilva/assignment---capstone-project-sandareka",
       category: "Full-Stack Development",
       images: [
         {
@@ -230,10 +231,10 @@ const Projects = () => {
             >
               {/* Project Image - Fixed height container */}
               <div className="lg:w-1/2 relative overflow-hidden">
-                <div 
+                <div
                   className="w-full h-80 md:h-96 lg:h-full lg:min-h-[400px] relative bg-gray-900/50 flex items-center justify-center"
-                  style={{ 
-                    minHeight: '320px' // Ensures consistent height on mobile
+                  style={{
+                    minHeight: "320px", // Ensures consistent height on mobile
                   }}
                 >
                   {project.images && project.images.length > 0 ? (
@@ -247,15 +248,17 @@ const Projects = () => {
                             alt={image.alt}
                             className={`absolute max-w-full max-h-full object-contain rounded-lg shadow-lg transition-all duration-700 ease-in-out transform ${
                               (currentImageIndex[project.id] || 0) === imgIndex
-                                ? 'opacity-100 scale-100'
-                                : 'opacity-0 scale-95'
+                                ? "opacity-100 scale-100"
+                                : "opacity-0 scale-95"
                             }`}
                             style={{
-                              maxHeight: 'calc(100% - 2rem)',
-                              maxWidth: 'calc(100% - 2rem)',
+                              maxHeight: "calc(100% - 2rem)",
+                              maxWidth: "calc(100% - 2rem)",
                             }}
                             onError={(e) => {
-                              console.log(`Failed to load image: ${e.target.src}`);
+                              console.log(
+                                `Failed to load image: ${e.target.src}`
+                              );
                               e.target.style.display = "none";
                             }}
                           />
@@ -295,7 +298,8 @@ const Projects = () => {
                                   }))
                                 }
                                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                  (currentImageIndex[project.id] || 0) === imgIndex
+                                  (currentImageIndex[project.id] || 0) ===
+                                  imgIndex
                                     ? "bg-white scale-125"
                                     : "bg-white/50 hover:bg-white/75"
                                 }`}
@@ -348,18 +352,20 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* GitHub Button */}
-                <div className="flex">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 md:space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-xs md:text-sm font-medium group/btn hover:scale-105"
-                  >
-                    <Github className="w-4 h-4 md:w-5 md:h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
-                    <span>View Code</span>
-                  </a>
-                </div>
+                {/* GitHub Button (only if project.github exists) */}
+                {project.github && project.github !== "#" && (
+                  <div className="flex">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 md:space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-xs md:text-sm font-medium group/btn hover:scale-105"
+                    >
+                      <Github className="w-4 h-4 md:w-5 md:h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                      <span>View Code</span>
+                    </a>
+                  </div>
+                )}
               </div>
 
               {/* Hover Effect Overlay */}
