@@ -24,12 +24,8 @@
     "eslint-config-next": "15.4.5",
     "gh-pages": "^6.3.0",
     "tailwindcss": "^4"
-  },
-  "scripts": {
-  "dev": "next dev",
- "build": "next build",
-  "deploy": "echo '' > out/.nojekyll"
-}
+  }
+
 
   
 
