@@ -23,7 +23,7 @@ import {
   Globe
 } from 'lucide-react';
 
-//const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
+const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
 
 // Volunteering Modal Component
 const VolunteeringModal = ({ isOpen, onClose }) => {
