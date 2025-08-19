@@ -101,7 +101,7 @@ const Contact = () => {
           </h2>
           <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base px-2">
-            Have a project in mind or just want to chat? I'd love to hear from you. 
+            Have a project in mind or just want to chat? I'd like to hear from you. 
             Let's discuss how we can work together to bring your ideas to life.
           </p>
         </div>

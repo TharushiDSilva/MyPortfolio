@@ -131,7 +131,7 @@ const VolunteeringModal = ({ isOpen, onClose }) => {
               <h4 className="text-xl font-semibold text-pink-400">My Volunteering Journey</h4>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              I love contributing beyond academics by supporting tech and creative communities. 
+              I am passionate about engaging in activities beyond academics by supporting tech and creative communities. 
               Here are some of the volunteer roles I've enjoyed being part of! Each experience has 
               taught me valuable skills in teamwork, leadership, and community building.
             </p>
