@@ -138,7 +138,7 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
             {/* Gradient border wrapper */}
             <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 p-1 hover:scale-105 transition-transform duration-300 shadow-lg">
               <img 
-                src={`${prefix}/portfolio_images/main5.jpg`}
+                src={`portfolio_images/main5.jpg`}
                 alt="Tharushi De Silva"
                 className="w-full h-full rounded-full object-cover"
               />
@@ -161,7 +161,7 @@ const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
             Get Connected
           </a>
           <a
-             href={`${prefix}/Tharushi De Silva CV.pdf`}
+             href={`Tharushi De Silva CV.pdf`}
             download="Tharushi De Silva CV.pdf"
             className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-pink-500 text-pink-400 rounded-full font-semibold hover:bg-pink-500 hover:text-white transition-all duration-300 text-sm sm:text-base"
           >

@@ -305,39 +305,39 @@ const AboutMe = () => {
   // Skills data with real logo image paths and fallback text
  const skillsData = [
   // Web Technologies
-  { name: "HTML", logo: [`${prefix}/portfolio_images/html.png`], fallback: "HTML", color: "from-orange-500/30 to-yellow-500/30" },
-  { name: "CSS", logo: [`${prefix}/portfolio_images/css.png`], fallback: "CSS", color: "from-blue-500/30 to-cyan-500/30" },
-  { name: "Tailwind CSS", logo: [`${prefix}/portfolio_images/tailwind.png`], fallback: "TW", color: "from-cyan-400/30 to-blue-500/30" },
-  { name: "Material UI", logo: [`${prefix}/portfolio_images/mui.png`], fallback: "MUI", color: "from-blue-600/30 to-indigo-600/30" },
-  { name: "React.js", logo: [`${prefix}/portfolio_images/react.png`], fallback: "React", color: "from-cyan-400/30 to-blue-500/30" },
-  { name: "Next.js", logo: [`${prefix}/portfolio_images/next.png`], fallback: "Next", color: "from-gray-600/30 to-black/30" },
-  { name: "Node.js", logo: [`${prefix}/portfolio_images/node.png`], fallback: "Node", color: "from-black-500/30 to-black-600/30" },
+  { name: "HTML", logo: [`portfolio_images/html.png`], fallback: "HTML", color: "from-orange-500/30 to-yellow-500/30" },
+  { name: "CSS", logo: [`portfolio_images/css.png`], fallback: "CSS", color: "from-blue-500/30 to-cyan-500/30" },
+  { name: "Tailwind CSS", logo: [`portfolio_images/tailwind.png`], fallback: "TW", color: "from-cyan-400/30 to-blue-500/30" },
+  { name: "Material UI", logo: [`portfolio_images/mui.png`], fallback: "MUI", color: "from-blue-600/30 to-indigo-600/30" },
+  { name: "React.js", logo: [`portfolio_images/react.png`], fallback: "React", color: "from-cyan-400/30 to-blue-500/30" },
+  { name: "Next.js", logo: [`portfolio_images/next.png`], fallback: "Next", color: "from-gray-600/30 to-black/30" },
+  { name: "Node.js", logo: [`portfolio_images/node.png`], fallback: "Node", color: "from-black-500/30 to-black-600/30" },
 
   // AI & Chatbot
-  { name: "Google Gemini API", logo: [`${prefix}/portfolio_images/gemini.png`], fallback: "Gemini", color: "from-purple-500/30 to-pink-500/30" },
-  { name: "Flask", logo: [`${prefix}/portfolio_images/flask.png`], fallback: "Flask", color: "from-white-100/30 to-purple-800/30" },
-  { name: "NLP Basics", logo: [`${prefix}/portfolio_images/nlp.png`], fallback: "NLP", color: "from-indigo-500/30 to-purple-600/30" },
+  { name: "Google Gemini API", logo: [`portfolio_images/gemini.png`], fallback: "Gemini", color: "from-purple-500/30 to-pink-500/30" },
+  { name: "Flask", logo: [`portfolio_images/flask.png`], fallback: "Flask", color: "from-white-100/30 to-purple-800/30" },
+  { name: "NLP Basics", logo: [`portfolio_images/nlp.png`], fallback: "NLP", color: "from-indigo-500/30 to-purple-600/30" },
 
   // Programming Languages
-  { name: "C", logo: [`${prefix}/portfolio_images/c.png`], fallback: "C", color: "from-blue-600/30 to-blue-800/30" },
-  { name: "C#", logo: [`${prefix}/portfolio_images/csharp.png`], fallback: "C#", color: "from-purple-600/30 to-indigo-600/30" },
-  { name: "Python", logo: [`${prefix}/portfolio_images/python.png`], fallback: "PY", color: "from-yellow-500/30 to-green-500/30" },
-  { name: "Java", logo: [`${prefix}/portfolio_images/java.png`], fallback: "Java", color: "from-red-600/30 to-orange-600/30" },
-  { name: "JavaScript", logo: [`${prefix}/portfolio_images/javascript.png`], fallback: "JS", color: "from-yellow-400/30 to-orange-500/30" },
-  { name: "SQL", logo: [`${prefix}/portfolio_images/sql.png`], fallback: "SQL", color: "from-blue-500/30 to-teal-500/30" },
-  { name: "PHP", logo: [`${prefix}/portfolio_images/php.png`], fallback: "PHP", color: "from-black-800/30 to-black-600/30" },
+  { name: "C", logo: [`portfolio_images/c.png`], fallback: "C", color: "from-blue-600/30 to-blue-800/30" },
+  { name: "C#", logo: [`portfolio_images/csharp.png`], fallback: "C#", color: "from-purple-600/30 to-indigo-600/30" },
+  { name: "Python", logo: [`portfolio_images/python.png`], fallback: "PY", color: "from-yellow-500/30 to-green-500/30" },
+  { name: "Java", logo: [`portfolio_images/java.png`], fallback: "Java", color: "from-red-600/30 to-orange-600/30" },
+  { name: "JavaScript", logo: [`portfolio_images/javascript.png`], fallback: "JS", color: "from-yellow-400/30 to-orange-500/30" },
+  { name: "SQL", logo: [`portfolio_images/sql.png`], fallback: "SQL", color: "from-blue-500/30 to-teal-500/30" },
+  { name: "PHP", logo: [`portfolio_images/php.png`], fallback: "PHP", color: "from-black-800/30 to-black-600/30" },
 
   // Tools & Frameworks
-  { name: "ASP.NET Core", logo: [`${prefix}/portfolio_images/dotnet.png`], fallback: ".NET", color: "from-purple-600/30 to-blue-600/30" },
-  { name: "REST API", logo: [`${prefix}/portfolio_images/restapi.png`], fallback: "API", color: "from-purple-800/30 to-blue-500/30" },
-  { name: "Visual Studio", logo: [`${prefix}/portfolio_images/visualstudio.png`], fallback: "VS", color: "from-purple-600/30 to-indigo-600/30" },
-  { name: "VS Code", logo: [`${prefix}/portfolio_images/vscode.png`], fallback: "VSC", color: "from-blue-500/30 to-cyan-500/30" },
-  { name: "GitHub", logo: [`${prefix}/portfolio_images/github.png`], fallback: "Git", color: "from-gray-700/30 to-black/30" },
-  { name: "Postman", logo: [`${prefix}/portfolio_images/postman.png`], fallback: "POST", color: "from-gray-50/30 to-gray-50/30" },
+  { name: "ASP.NET Core", logo: [`portfolio_images/dotnet.png`], fallback: ".NET", color: "from-purple-600/30 to-blue-600/30" },
+  { name: "REST API", logo: [`portfolio_images/restapi.png`], fallback: "API", color: "from-purple-800/30 to-blue-500/30" },
+  { name: "Visual Studio", logo: [`portfolio_images/visualstudio.png`], fallback: "VS", color: "from-purple-600/30 to-indigo-600/30" },
+  { name: "VS Code", logo: [`portfolio_images/vscode.png`], fallback: "VSC", color: "from-blue-500/30 to-cyan-500/30" },
+  { name: "GitHub", logo: [`portfolio_images/github.png`], fallback: "Git", color: "from-gray-700/30 to-black/30" },
+  { name: "Postman", logo: [`portfolio_images/postman.png`], fallback: "POST", color: "from-gray-50/30 to-gray-50/30" },
 
   // Design
-  { name: "Figma", logo: [`${prefix}/portfolio_images/figma.png`], fallback: "Fig", color: "from-purple-500/30 to-pink-500/30" },
-  { name: "UI/UX Design", logo: [`${prefix}/portfolio_images/uiux.png`], fallback: "UX", color: "from-pink-500/30 to-rose-500/30" }
+  { name: "Figma", logo: [`portfolio_images/figma.png`], fallback: "Fig", color: "from-purple-500/30 to-pink-500/30" },
+  { name: "UI/UX Design", logo: [`portfolio_images/uiux.png`], fallback: "UX", color: "from-pink-500/30 to-rose-500/30" }
 ];
 
   const skillCategories = [
@@ -398,56 +398,56 @@ const AboutMe = () => {
       icon: Trophy,
       description: "Secured 3rd place in the J'PURAXTREME Hackathon 0.1 organized by the University of Jayawardenepura IEEE Student Branch and IEEE Computer Society",
       color: "from-amber-500 to-orange-600",
-      images: [`${prefix}/portfolio_images/jpura1.jpg`]
+      images: [`portfolio_images/jpura1.jpg`]
     },
     {
       title: "Finalist – CodeJam by CSE 2025",
       icon: Award,
       description: "Reached as finalist in Codex a competition at the CodeJam 2025 organized by CSE, faculty of Engineering, University of Moratuwa",
       color: "from-blue-500 to-teal-600",
-      images: [`${prefix}/portfolio_images/codejam2.jpg`, `${prefix}/portfolio_images/codejam.png`]
+      images: [`portfolio_images/codejam2.jpg`, `portfolio_images/codejam.png`]
     },
     {
       title: "6th Place – INTECS CODERUSH 2024",
       icon: Award,
       description: "Secured 6th place at Coderush 2024, a competitive coding event organized by INTECS,  Faculty of Information Technology, University of Moratuwa. The awarding ceremony celebrated innovative problem-solving and technical excellence among top-performing participants.",
       color: "from-purple-500 to-indigo-600",
-      images: [`${prefix}/portfolio_images/coderush1.jpg`]
+      images: [`portfolio_images/coderush1.jpg`]
     },
     {
       title: "Finalist – UOJ Coders",
       icon: Target,
       description: "Reached top 10 finals in coding competition",
       color: "from-blue-500 to-cyan-600",
-      images: [`${prefix}/portfolio_images/uoj.png`]
+      images: [`portfolio_images/uoj.png`]
     },
     {
       title: "Outstanding Volunteer – IEEE WIE(November 2024)",
       icon: Star,
       description: "Recognized as an Outstanding Volunteer by the IEEE WIE Student Branch Affinity Group at the University of Moratuwa for November. Honored for dedicated contributions and active involvement in promoting impactful initiatives and events within the vibrant WIE community.",
       color: "from-green-500 to-emerald-600",
-      images: [`${prefix}/portfolio_images/wie.jpg`]
+      images: [`portfolio_images/wie.jpg`]
     },
     {
       title: "Final Round – InterfaceX Designathon 2025",
       icon: Palette,
       description: "Advanced to Round 2 of the InterfaceX Designathon 2025, organized by ASTA, in recognition of impressive design skills and creativity demonstrated during the initial round.",
       color: "from-pink-500 to-rose-600",
-      images: [`${prefix}/portfolio_images/interfacex1.png`]
+      images: [`portfolio_images/interfacex1.png`]
     },
     {
       title: "Participant – IEEE Xtreme 18.0",
       icon: Code,
       description: "Took part in global 24-hour coding challenge by IEEE",
       color: "from-blue-500 to-indigo-600",
-      images: [`${prefix}/portfolio_images/xtreme.png`]
+      images: [`portfolio_images/xtreme.png`]
     },
     {
       title: "Participant – INTECS CODERUSH 2023",
       icon: Code,
       description: "Participated in university-level coding competition",
       color: "from-green-500 to-emerald-600",
-      images: [`${prefix}/portfolio_images/coderush.png`]
+      images: [`portfolio_images/coderush.png`]
     }
   ];
 

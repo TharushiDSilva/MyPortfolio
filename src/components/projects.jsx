@@ -52,11 +52,11 @@ const Projects = () => {
       category: "Full-Stack Development",
       images: [
         {
-          url: `${prefix}/portfolio_images/prescrypt-1.jpg`,
+          url: `portfolio_images/prescrypt-1.jpg`,
           alt: "Login Dashboard",
         },
         {
-          url: `${prefix}/portfolio_images/prescrypt-2.jpg`,
+          url: `portfolio_images/prescrypt-2.jpg`,
           alt: "Patient Records",
         },
       ],
@@ -72,11 +72,11 @@ const Projects = () => {
       category: "IoT & Hardware",
       images: [
         {
-          url: `${prefix}/portfolio_images/watertank2.jpg`,
+          url: `portfolio_images/watertank2.jpg`,
           alt: "Arduino Setup",
         },
         {
-          url: `${prefix}/portfolio_images/watertank1.jpg`,
+          url: `portfolio_images/watertank1.jpg`,
           alt: "Water Tank System",
         },
       ],
@@ -93,11 +93,11 @@ const Projects = () => {
       category: "Frontend Development",
       images: [
         {
-          url: `${prefix}/portfolio_images/portfolio.png`,
+          url: `portfolio_images/portfolio.png`,
           alt: "Portfolio Homepage",
         },
         {
-          url: `${prefix}/portfolio_images/portfolio1.png`,
+          url: `portfolio_images/portfolio1.png`,
           alt: "Portfolio Projects",
         },
       ],
@@ -115,7 +115,7 @@ const Projects = () => {
       category: "Full-Stack Development",
       images: [
         {
-          url: `${prefix}/portfolio_images/school1.png`,
+          url: `portfolio_images/school1.png`,
           alt: "Dashboard Overview",
         },
       ],
@@ -132,10 +132,10 @@ const Projects = () => {
       category: "Web Development",
       images: [
         {
-          url: `${prefix}/portfolio_images/flagx1.png`,
+          url: `portfolio_images/flagx1.png`,
           alt: "Smartphone Comparison",
         },
-        { url: `${prefix}/portfolio_images/flagx2.png`, alt: "Launch Updates" },
+        { url: `portfolio_images/flagx2.png`, alt: "Launch Updates" },
       ],
     },
   ];

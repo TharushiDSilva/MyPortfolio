@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex-shrink-0 ml-1 md:ml-0">
           <Link href="/">
             <img
-              src={`${prefix}/portfolio_images/signature.png`}
+              src={`portfolio_images/signature.png`}
               alt="Logo"
               className="h-12 md:h-16 w-auto"
             />
