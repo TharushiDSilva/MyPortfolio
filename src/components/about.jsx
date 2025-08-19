@@ -23,7 +23,7 @@ import {
   Globe
 } from 'lucide-react';
 
-const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
+//const prefix = process.env.NODE_ENV === 'production' ? '/MyPortfolio' : '';
 
 // Volunteering Modal Component
 const VolunteeringModal = ({ isOpen, onClose }) => {
@@ -490,7 +490,7 @@ const AboutMe = () => {
               <div className="relative w-full max-w-sm">
                 <div className="w-48 h-48 sm:w-64 sm:h-64 mx-auto bg-gradient-to-br from-pink-500/20 to-purple-600/20 rounded-2xl border-2 border-pink-400/30 overflow-hidden">
                   <img 
-                    src={`${prefix}/portfolio_images/main1.jpg`}
+                    src={`portfolio_images/main1.jpg`}
                     alt="Profile" 
                     className="w-full h-full object-cover"
                     onError={(e) => {
