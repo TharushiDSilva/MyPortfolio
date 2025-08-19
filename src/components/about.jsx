@@ -188,7 +188,7 @@ const VolunteeringModal = ({ isOpen, onClose }) => {
             <div>
               <div className="flex items-center space-x-3 mb-6">
                 <Settings className="w-6 h-6 text-cyan-400" />
-                <h4 className="text-xl font-semibold text-cyan-400">🛠️ Technical & Leadership Roles</h4>
+                <h4 className="text-xl font-semibold text-cyan-400">Other Membership Roles</h4>
               </div>
               <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-4">
                 {volunteeringData.technical.map((item, index) => (
