@@ -33,12 +33,18 @@ const VolunteeringModal = ({ isOpen, onClose }) => {
     leadership: [
       {
         title: "Event Co-Chair",
-        organization: "ENGINUITY 2.0 (IEEE WIE – UoM)",
+        organization: "ENGINUITY 2.0 (IEEE WIE – UOM)",
         icon: Crown,
         color: "from-purple-500 to-pink-600"
       }
     ],
     design: [
+       {
+        title: "Design Committee Member",
+        organization: "IEEE WIE Affinity group of UOM",
+        icon: PenTool,
+        color: "from-pink-500 to-rose-600"
+      },
       {
         title: "Design Committee Member",
         organization: "Computer Society – IEEE University of Moratuwa Student Branch",
@@ -53,21 +59,15 @@ const VolunteeringModal = ({ isOpen, onClose }) => {
       },
       {
         title: "Design Committee Member",
-        organization: "XpertsMora'24 – IEEE Industry Applications Society – UoM",
+        organization: "XpertsMora'24 – IEEE Industry Applications Society – UOM",
         icon: PenTool,
         color: "from-orange-500 to-red-600"
       },
       {
         title: "Design Committee Member",
-        organization: "Octwave 2.0 – IEEE Industry Applications Society – UoM",
+        organization: "Octwave 2.0 – IEEE Industry Applications Society – UOM",
         icon: Palette,
         color: "from-indigo-500 to-purple-600"
-      },
-      {
-        title: "Design Committee Member",
-        organization: "IEEE WIE (Women In Engineering) – UoM",
-        icon: PenTool,
-        color: "from-pink-500 to-rose-600"
       }
     ],
     technical: [
@@ -85,7 +85,7 @@ const VolunteeringModal = ({ isOpen, onClose }) => {
       },
       {
         title: "Editorial Committee Member",
-        organization: "IEEE TEMS Student Branch Chapter – UoM",
+        organization: "IEEE TEMS Student Branch Chapter – UOM",
         icon: Mic,
         color: "from-yellow-500 to-orange-600"
       },
