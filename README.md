@@ -7,9 +7,9 @@ This portfolio showcases my journey, projects, achievements, and experiences bey
 
 ## 🚀 Live Website
 
-👉 [Visit My Portfolio](https://tharushiportfolio.vercel.app)
+👉 [Visit My Portfolio](https://tharushidev.vercel.app)
 
-[![Portfolio](https://img.shields.io/badge/Visit-Portfolio-blue?style=for-the-badge&logo=vercel)](https://tharushiportfolio.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Visit-Portfolio-blue?style=for-the-badge&logo=vercel)](https://tharushidev.vercel.app)
 
 ---
 
