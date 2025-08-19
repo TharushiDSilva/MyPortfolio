@@ -38,4 +38,3 @@ This portfolio showcases my journey, projects, achievements, and experiences bey
 
 ---
 
-✨ Thank you for visiting my portfolio repository!
