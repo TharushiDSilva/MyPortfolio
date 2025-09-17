@@ -37,8 +37,6 @@ export default function RootLayout({ children }) {
           {children}
         </div>
         <Analytics />
-        
-        {/* Optional: Footer or additional components can be added here */}
       </body>
     </html>
   );

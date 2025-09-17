@@ -329,6 +329,7 @@ const AboutMe = () => {
 
   // Tools & Frameworks
   { name: "ASP.NET Core", logo: [`portfolio_images/dotnet.png`], fallback: ".NET", color: "from-purple-600/30 to-blue-600/30" },
+  { name: "Spring Boot", logo: [`portfolio_images/spring.png`], fallback: "Spring Boot", color: "from-green-500/30 to-green-700/30" },
   { name: "REST API", logo: [`portfolio_images/restapi.png`], fallback: "API", color: "from-purple-800/30 to-blue-500/30" },
   { name: "Visual Studio", logo: [`portfolio_images/visualstudio.png`], fallback: "VS", color: "from-purple-600/30 to-indigo-600/30" },
   { name: "VS Code", logo: [`portfolio_images/vscode.png`], fallback: "VSC", color: "from-blue-500/30 to-cyan-500/30" },
