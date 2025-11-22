@@ -88,12 +88,15 @@ const Projects = () => {
           alt: "Login Dashboard",
         },
         {
-          url: `portfolio_images/prescrypt-2.jpg`,
+          url: `portfolio_images/prescrypt-5.png`,
           alt: "Patient Records",
         },
         {
           url: `portfolio_images/prescrypt-3.png`,
         },
+        {
+          url: `portfolio_images/prescrypt-4.png`,
+        }
 
       ],
     },
@@ -151,7 +154,7 @@ const Projects = () => {
       techStack: ["Next.js", "Tailwind CSS"],
       icon: Scissors,  // pick a related icon
       gradient: "from-green-400 to-teal-500",
-      github: "https://github.com/YourUsername/LeaderTailors",
+      github: "https://github.com/DewminK/leader-tailors-frontend",
       website: "https://leader-tailors.vercel.app/",
       category: "Frontend Development",
       images: [
@@ -177,20 +180,24 @@ const Projects = () => {
   id: 9,
   title: "SketchFlow – Collaborative Learning Platform",
   description:
-    "SketchFlow is a real-time collaborative learning platform that allows multiple users to interact simultaneously. It features live text and voice chat with real time notifications, a shared whiteboard for collaborative drawing, and interactive session management. The system uses network programming concepts to enable real-time communication between users, ensuring smooth synchronization of messages, drawings, and session states. Ideal for group learning, brainstorming sessions, and collaborative projects.",
+    "SketchFlow is a real-time collaborative learning platform that allows multiple users to interact simultaneously. It features live text and voice chat with real time notifications, a shared whiteboard for collaborative drawing, and interactive session management. The system uses network programming concepts to enable real-time communication between users, ensuring smooth synchronization of messages, drawings, and session states.",
   techStack: ["Java", "Socket Programming", "Network Programming", "Multithreading"],
   gradient: "from-purple-500 to-indigo-500",
   github: "https://github.com/NPSketchFlow",
   category: "Network Programming / Full-Stack Development",
   images: [
     {
-      url: `portfolio_images/sketchflow-1.jpg`,
+      url: `portfolio_images/sketchflow1.png`,
       alt: "Real-time Whiteboard Interface",
     },
     {
-      url: `portfolio_images/sketchflow-2.jpg`,
+      url: `portfolio_images/sketchflow2.png`,
       alt: "Text and Voice Chat Feature",
     },
+    {
+      url: `portfolio_images/sketchflow3.png`,
+      alt: "Session Management Dashboard",
+    }
   ],
 },
 
