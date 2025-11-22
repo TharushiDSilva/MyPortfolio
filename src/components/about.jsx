@@ -311,7 +311,6 @@ const AboutMe = () => {
   { name: "Material UI", logo: [`portfolio_images/mui.png`], fallback: "MUI", color: "from-blue-600/30 to-indigo-600/30" },
   { name: "React.js", logo: [`portfolio_images/react.png`], fallback: "React", color: "from-cyan-400/30 to-blue-500/30" },
   { name: "Next.js", logo: [`portfolio_images/next.png`], fallback: "Next", color: "from-gray-600/30 to-black/30" },
-  { name: "Node.js", logo: [`portfolio_images/node.png`], fallback: "Node", color: "from-black-500/30 to-black-600/30" },
 
   // AI & Chatbot
   { name: "Google Gemini API", logo: [`portfolio_images/gemini.png`], fallback: "Gemini", color: "from-purple-500/30 to-pink-500/30" },
@@ -345,14 +344,9 @@ const AboutMe = () => {
     {
       category: "Web Technologies",
       icon: Code,
-      skills: skillsData.slice(0, 7)
+      skills: skillsData.slice(0, 6)
     },
-    {
-      category: "AI & Chatbot Integration",
-      icon: Brain,
-      skills: skillsData.slice(7, 10)
-    },
-    {
+     {
       category: "Programming Languages",
       icon: Code,
       skills: skillsData.slice(10, 17)
@@ -360,12 +354,18 @@ const AboutMe = () => {
     {
       category: "Tools & Frameworks",
       icon: Zap,
-      skills: skillsData.slice(17, 23)
+      skills: skillsData.slice(17, 24)
     },
+    {
+      category: "AI & Chatbot Integration",
+      icon: Brain,
+      skills: skillsData.slice(7, 10)
+    },
+   
     {
       category: "Design",
       icon: Palette,
-      skills: skillsData.slice(23, 25)
+      skills: skillsData.slice(24, 26)
     }
   ];
 
@@ -524,11 +524,8 @@ const AboutMe = () => {
                 <div className="flex-1 w-full">
                   <h3 className="text-xl sm:text-2xl font-semibold text-pink-400 mb-3 sm:mb-4">Brief Introduction</h3>
                   <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                    I am a motivated IT undergraduate with a keen interest in UI/UX design and Software Engineering. 
-                    Currently studying for a BSc (Hons) in Information Technology at the Faculty of IT, University of Moratuwa, 
-                    I enjoy blending creativity with technology to build meaningful user experiences and efficient systems. 
-                    I'm also deeply curious about Artificial Intelligence and Data Science, and I'm eager to grow through 
-                    hands-on projects and contribute to innovative, impactful solutions.
+                    I am a motivated IT undergraduate passionate about software development, with hands-on interest in both frontend and backend technologies. Currently pursuing a BSc (Hons) in Information Technology at the Faculty of IT, University of Moratuwa, I enjoy building efficient, scalable, and user-friendly applications. I am eager to learn new tools and technologies every day, constantly improving my skills and taking on projects that create real impact.
+
                   </p>
                 </div>
               </div>

@@ -12,7 +12,10 @@ import {
   ChevronLeft,
   ChevronRight,
   Contact,
+  ShoppingCart,
+  Scissors,
 } from "lucide-react";
+import { VerticalTiltShiftShader } from "three/examples/jsm/Addons.js";
 
 const prefix = process.env.NODE_ENV === "production" ? "/MyPortfolio" : "";
 
@@ -41,6 +44,35 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 6,
+      title: "Embula – Restaurant Website",
+      description:
+        "Embula is a restaurant website featuring a dynamic food menu showcase, shopping cart, and secure online payments. It includes a table reservation system allowing customers to pre-book dine-in slots and an AI-powered chatbot for menu navigation, reservations, and customer support. Additional pages like Contact Us and Feedback improve customer interaction and service quality. The frontend uses Next.js with Tailwind CSS, and the backend is powered by Spring Boot with MySQL integration.",
+      techStack: ["Next.js", "Tailwind CSS", "Spring Boot", "MySQL", "AI"],
+      icon: ShoppingCart, // you can pick an appropriate icon
+      gradient: "from-yellow-400 to-orange-500",
+      github: "https://github.com/Embula-Project",
+      category: "Full-Stack Development",
+      images: [
+        {
+          url: `portfolio_images/embula home page.png`,
+          alt: "Homepage of emmbula restaurant",
+        },
+        {
+          url: `portfolio_images/embula2.png`,
+          alt: "Reservation Page with Table Selection",
+        },
+        {
+          url: `portfolio_images/embula3.png`,
+          alt: "Reservation confirmation page",
+        },
+        {
+          url: `portfolio_images/table reservation.png`,
+          alt: "table selection modal",
+        },
+      ],
+    },
+    {
       id: 5,
       title: "PresCrypt – Doctor-Patient Management System",
       description:
@@ -56,29 +88,41 @@ const Projects = () => {
           alt: "Login Dashboard",
         },
         {
-          url: `portfolio_images/prescrypt-2.jpg`,
+          url: `portfolio_images/prescrypt-5.png`,
           alt: "Patient Records",
         },
+        {
+          url: `portfolio_images/prescrypt-3.png`,
+        },
+        {
+          url: `portfolio_images/prescrypt-4.png`,
+        }
+
       ],
     },
     {
-      id: 2,
-      title: "Water Tank Cleaning System",
+      id: 7,
+      title: "CarVo – Vehicle Service Management System ",
       description:
-        "This Level 1 microcontroller-based hardware project was developed to transform traditional water tank cleaning by offering a fully automated, efficient, and hygienic solution. Motivated by the real-world challenges people face with manual tank cleaning, our team conducted extensive research to design an innovative system aimed at eliminating manual labor, reducing contamination risks, and ensuring safer water usage.The system features with advanced motorized lid integrating,Rotating cleaning brushes,High-pressure water pumps,Sensor units to monitor water levels and cleaning progressand A central Arduino microcontroller for complete automation",
-      techStack: ["Arduino", "C++", "IoT", "Sensors"],
-      icon: Droplets,
-      gradient: "from-blue-400 to-teal-500",
-      category: "IoT & Hardware",
+        "CarVo is a vehicle service management platform designed for employees, customers, and administrators to manage service tasks and workflows efficiently. Features include task tracking, work logs, time tracking, and part requests. The frontend was built with Next.js and Tailwind CSS, while backend APIs were developed using Spring Boot and MySQL.",
+      techStack: ["Spring Boot", "Next.js", "Tailwind CSS", "MySQL"],
+      gradient: "from-blue-500 to-indigo-500",
+      github: "https://github.com/ravndu-dlshan/asms-frontend",
+      category: "Full-Stack Development",
       images: [
         {
-          url: `portfolio_images/watertank2.jpg`,
-          alt: "Arduino Setup",
+          url: `portfolio_images/carvo3.jpeg`,
         },
         {
-          url: `portfolio_images/watertank1.jpg`,
-          alt: "Water Tank System",
+          url: `portfolio_images/carvo1.png`,
+          alt: "Employee Portal Dashboard",
         },
+        {
+          url: `portfolio_images/carvo22.jpeg`,
+          alt: "Part Request Section",
+        },
+        
+
       ],
     },
     {
@@ -102,6 +146,83 @@ const Projects = () => {
         },
       ],
     },
+    {
+      id: 8,
+      title: "LeaderTailors Website (Client Project)",
+      description:
+        "LeaderTailors is a business website for a company in Katubedda, Sri Lanka, aimed at digitalizing operations and improving customer engagement. It features a Blazer Rental module, allowing customers to view, select, and reserve blazers online with real-time availability. The frontend is responsive, user-friendly, and built with Next.js and Tailwind CSS.",
+      techStack: ["Next.js", "Tailwind CSS"],
+      icon: Scissors,  // pick a related icon
+      gradient: "from-green-400 to-teal-500",
+      github: "https://github.com/DewminK/leader-tailors-frontend",
+      website: "https://leader-tailors.vercel.app/",
+      category: "Frontend Development",
+      images: [
+        {
+          url: `portfolio_images/leader tailors1.png`,
+          alt: "Blazer Rental Homepage",
+        },
+        {
+          url: `portfolio_images/leadertailors2.png`,
+          alt: "Blazer Selection and Reservation",
+        },
+        {
+          url: `portfolio_images/leadertailors3.png`,
+          alt: "Reservation Confirmation",
+        },
+        {
+          url: `portfolio_images/leadertailors4.png`, 
+          alt: "Contact Us Page",
+        }
+      ],
+    },
+    {
+  id: 9,
+  title: "SketchFlow – Collaborative Learning Platform",
+  description:
+    "SketchFlow is a real-time collaborative learning platform that allows multiple users to interact simultaneously. It features live text and voice chat with real time notifications, a shared whiteboard for collaborative drawing, and interactive session management. The system uses network programming concepts to enable real-time communication between users, ensuring smooth synchronization of messages, drawings, and session states.",
+  techStack: ["Java", "Socket Programming", "Network Programming", "Multithreading"],
+  gradient: "from-purple-500 to-indigo-500",
+  github: "https://github.com/NPSketchFlow",
+  category: "Network Programming / Full-Stack Development",
+  images: [
+    {
+      url: `portfolio_images/sketchflow1.png`,
+      alt: "Real-time Whiteboard Interface",
+    },
+    {
+      url: `portfolio_images/sketchflow2.png`,
+      alt: "Text and Voice Chat Feature",
+    },
+    {
+      url: `portfolio_images/sketchflow3.png`,
+      alt: "Session Management Dashboard",
+    }
+  ],
+},
+
+
+    {
+      id: 2,
+      title: "Water Tank Cleaning System",
+      description:
+        "This Level 1 microcontroller-based hardware project was developed to transform traditional water tank cleaning by offering a fully automated, efficient, and hygienic solution. Motivated by the real-world challenges people face with manual tank cleaning, our team conducted extensive research to design an innovative system aimed at eliminating manual labor, reducing contamination risks, and ensuring safer water usage.The system features with advanced motorized lid integrating,Rotating cleaning brushes,High-pressure water pumps,Sensor units to monitor water levels and cleaning progressand A central Arduino microcontroller for complete automation",
+      techStack: ["Arduino", "C++", "IoT", "Sensors"],
+      icon: Droplets,
+      gradient: "from-blue-400 to-teal-500",
+      category: "IoT & Hardware",
+      images: [
+        {
+          url: `portfolio_images/watertank2.jpg`,
+          alt: "Arduino Setup",
+        },
+        {
+          url: `portfolio_images/watertank1.jpg`,
+          alt: "Water Tank System",
+        },
+      ],
+    },
+
     {
       id: 3,
       title: "School Information Management System",
@@ -338,42 +459,56 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
-                  {project.techStack.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium border border-white/20 ${
-                        techStackColors[tech] || "bg-gray-600 text-white"
-                      } hover:scale-105 transition-transform duration-200`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              {  /* Tech Stack */}
+                        <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
+                          {project.techStack.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className={`px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium border border-white/20 ${
+                            techStackColors[tech] || "bg-gray-600 text-white"
+                            } hover:scale-105 transition-transform duration-200`}
+                          >
+                            {tech}
+                          </span>
+                          ))}
+                        </div>
 
-                {/* GitHub Button (only if project.github exists) */}
-                {project.github && project.github !== "#" && (
-                  <div className="flex">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center space-x-2 md:space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-xs md:text-sm font-medium group/btn hover:scale-105"
-                    >
-                      <Github className="w-4 h-4 md:w-5 md:h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
-                      <span>View Code</span>
-                    </a>
-                  </div>
-                )}
-              </div>
+                        {/* Buttons side-by-side (no new line) */}
+                        {(project.github || project.website) && (
+                          <div className="flex items-center gap-4 flex-nowrap overflow-x-auto">
+                          {project.github && project.github !== "#" && (
+                            <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center space-x-2 md:space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-xs md:text-sm font-medium group/btn hover:scale-105 whitespace-nowrap"
+                            >
+                            <Github className="w-4 h-4 md:w-5 md:h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                            <span>View Code</span>
+                            </a>
+                          )}
 
-              {/* Hover Effect Overlay */}
+                          {project.website && (
+                            <a
+                            href={project.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center space-x-2 md:space-x-3 bg-gray-800/50 hover:bg-gray-700/60 text-white py-2 md:py-3 px-4 md:px-6 rounded-lg border border-gray-600/50 hover:border-gray-500 transition-all duration-300 text-xs md:text-sm font-medium group/btn hover:scale-105 whitespace-nowrap"
+                            >
+                            <ExternalLink className="w-4 h-4 md:w-5 md:h-5 group-hover/btn:rotate-12 transition-transform duration-300" />
+                            <span>Visit Website</span>
+                            </a>
+                          )}
+                          </div>
+                        )}
+                        </div>
+
+                        {/* Hover Effect Overlay */}
               <div
                 className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}
               ></div>
             </div>
-          ))}
+               ))}
         </div>
       </div>
 
